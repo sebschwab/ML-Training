@@ -1,6 +1,6 @@
-# Machine-Learning-Training
+# Machine Learning Training
 
-This repository contains a code series using Python to train a deep neural net. I began with simply an array of 31 data points:
+> This repository contains a code series using Python to train a deep neural net. I began with simply an array of 31 data points:
 
 X=np.arange(0,31)
 

@@ -1,6 +1,8 @@
 # Machine Learning Training
 
-> This repository contains a code series using Python to train a deep neural net. I began with simply an array of 31 data points:
+> This repository contains a code series using Python to train a deep neural net.
+
+I began with simply an array of 31 data points:
 
 X=np.arange(0,31)
 
@@ -15,7 +17,7 @@ This function has three parameters that need to be optimized. To do this I used 
 
 E = sqrt((1/n)sum(f_xi-y)^2)
 
-Where n is the size of teh data set.
+Where n is the size of the data set.
 
 ![image](https://user-images.githubusercontent.com/129328983/230983491-4ff4a814-fec0-4022-9500-6b6b7f8b085d.png)
 

@@ -77,7 +77,7 @@ From these results, I was able to determine the best fit for each data set. The 
 
 Finally, I decided to test the data in another way. This time I used the first and last 10 values as the training set, and the middle 10 as the test values. I performed the same function modeling, linear, parabolic, and 19th degree polynomial. These were the results I acheived:
 
-![image](https://user-images.githubusercontent.com/129328983/231050461-227b1947-0a63-44fc-b2d7-0a3b14bad827.png)
+![image](https://user-images.githubusercontent.com/129328983/231051690-1231526b-e602-48a1-b1b6-e18e6519b177.png)
 
 ![image](https://user-images.githubusercontent.com/129328983/231050478-1cfb901c-a604-4fc3-962a-7ed483f20c3c.png)
 

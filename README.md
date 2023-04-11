@@ -49,6 +49,7 @@ I created a range of values for each parameter that, when swept through, would i
 
 ![image](https://user-images.githubusercontent.com/129328983/231048776-61ea3ab9-8f71-4880-93d1-599996160e61.png)
 
+This data shows me where local minimas are, and I can determine that some combinations of variables control a larger amount than others. This implies they have a higher control over the output of the model.
 
 ## Part Three
 

@@ -2,7 +2,7 @@
 
 > This repository contains a code series using Python to train a deep neural net.
 
-### Part One
+## Part One
 
 I began with simply an array of 31 data points:
 
@@ -31,7 +31,7 @@ Then I optimized the data and printed the resulting optimal parameters and minim
 
 ![image](https://user-images.githubusercontent.com/129328983/231048105-735f2a55-49c7-449b-82cf-536bd25ddafc.png)
 
-### Part Two
+## Part Two
 
 Next, I decided to make a 2D loss landscape by fixing two parameters and sweeping through a large range of values for the other two.
 
@@ -50,7 +50,7 @@ I created a range of values for each parameter that, when swept through, would i
 ![image](https://user-images.githubusercontent.com/129328983/231048776-61ea3ab9-8f71-4880-93d1-599996160e61.png)
 
 
-### Part Three
+## Part Three
 
 For the next part of my project, I decided to model different kinds of functions for the data set. I tested a linear, parabolic, and 19th degree polynomial. To begin, I split up my data into two parts: test and train.
 
@@ -71,3 +71,13 @@ Next I printed out my results:
 ![image](https://user-images.githubusercontent.com/129328983/231049879-49f48d1d-99b0-452f-8e39-25f01f37c6f9.png)
 
 From these results, I was able to determine the best fit for each data set. The parabola fit the training data the best, which makes sense since the data most closely resembles that function shape. However, the line model fit the test data the best. Another conclusion I drew is that the 19th degree polynomial is certainly incorrect. The function overfit the data and could not be used on the test data at all.
+
+## Part Four
+
+Finally, I decided to test the data in another way. This time I used the first and last 10 values as the training set, and the middle 10 as the test values. I performed the same function modeling, linear, parabolic, and 19th degree polynomial. These were the results I acheived:
+
+![image](https://user-images.githubusercontent.com/129328983/231050461-227b1947-0a63-44fc-b2d7-0a3b14bad827.png)
+
+![image](https://user-images.githubusercontent.com/129328983/231050478-1cfb901c-a604-4fc3-962a-7ed483f20c3c.png)
+
+This data shows a very similar pattern to the other training set. This leads me to believe that certianly 19th degree polynomials are too high and very prone to overfitting. It was interesting having a large gap in my data set because it caused the parabolic and linear functions to be very similar. They even overlap each other in the first graph. Their errors are very similar as well, therefore I conclude that either of those functions are appropriate to model my data.

@@ -31,7 +31,7 @@ Then I optimized the data and printed the resulting optimal parameters and minim
 
 ![image](https://user-images.githubusercontent.com/129328983/231048105-735f2a55-49c7-449b-82cf-536bd25ddafc.png)
 
-### Part 2
+### Part Two
 
 Next, I decided to make a 2D loss landscape by fixing two parameters and sweeping through a large range of values for the other two.
 
@@ -51,3 +51,23 @@ I created a range of values for each parameter that, when swept through, would i
 
 
 ### Part Three
+
+For the next part of my project, I decided to model different kinds of functions for the data set. I tested a linear, parabolic, and 19th degree polynomial. To begin, I split up my data into two parts: test and train.
+
+The train data would be the first 20 values, which I would use to test on the final 10 values.
+
+![image](https://user-images.githubusercontent.com/129328983/231049468-e1d08ca3-c147-4ca7-a5a2-210ecc00d3e8.png)
+
+To create each of my models, I used the numpy polyval and polyfit functions. First I would create a function with optimal coefficients with the training data, then use that function to fit onto the test data. Here is the code for each three functions I created:
+
+![image](https://user-images.githubusercontent.com/129328983/231049702-e5c5289e-b2a4-487c-8f61-57d958869205.png)
+
+Next I printed out my results:
+
+![image](https://user-images.githubusercontent.com/129328983/231049787-87b54c4a-de0e-4855-b58d-8b2edc2af3c2.png)
+
+![image](https://user-images.githubusercontent.com/129328983/231049836-8a57619f-1709-4fc0-a9d9-9ce6172c6766.png)
+
+![image](https://user-images.githubusercontent.com/129328983/231049879-49f48d1d-99b0-452f-8e39-25f01f37c6f9.png)
+
+From these results, I was able to determine the best fit for each data set. The parabola fit the training data the best, which makes sense since the data most closely resembles that function shape. However, the line model fit the test data the best. Another conclusion I drew is that the 19th degree polynomial is certainly incorrect. The function overfit the data and could not be used on the test data at all.

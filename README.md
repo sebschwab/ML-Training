@@ -2,6 +2,8 @@
 
 > This repository contains a code series using Python to train a deep neural net.
 
+[[project 1]]
+
 ## Part One
 
 I began with simply an array of 31 data points:

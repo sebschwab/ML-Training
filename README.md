@@ -9,3 +9,5 @@
 
 - [project 1](https://github.com/sebschwab/ML-Training/tree/main/project%201)
 
+- [project 2](https://github.com/sebschwab/ML-Training/tree/main/project%202)
+

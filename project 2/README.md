@@ -10,7 +10,7 @@ Throughout this project I use a matrix to represent all of the photos together, 
 
 An eigenvector is a vector that when multiplied by a matrix A, produces a scalar multiple of A. 
 
-Such as: $A*V = \delta*V$ where V is the eigenvector.
+Such as: $$ A*V = \delta*V $$ where V is the eigenvector.
 
 ## Sec. II. Theoretical Background
 ## Sec. III. Algorithm Implementation and Development 

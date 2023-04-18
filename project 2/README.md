@@ -6,13 +6,23 @@ Sebastian Schwab
 > This data set was created in the early days of AI, and was one of the first facial recognition algorithms created.
 
 ## Sec. I. Introduction and Overview
-Throughout this project I use a matrix to represent all of the photos together, this matrix X uses a compressed form of manipulation that turns every 2D image into a single column. Therefore, every column represents a single image. I also create correlational matrices, to perform this you must dot product one matrix to the transpose of itself ($C = A*A^T$). 
+Throughout this project I use a matrix to represent all of the photos together, this matrix X uses a compressed form of manipulation that turns every 2D image into a single column. Therefore, every column represents a single image. I use correlational matrices to compare which values are most highly related, and unrelated. I also try to find an eigenvector and SVD representation of the correlational matrix. Then compare the two methods to determine their accuracy.
+
+## Sec. II. Theoretical Background
+Correlational matrices are used to represent the data, to perform one you must dot product one matrix to the transpose of itself ($C = A*A^T$).
 
 An eigenvector is a vector that when multiplied by a matrix A, produces a scalar multiple of A. 
 
-Such as: $A * V = A*A^T$ where V is the eigenvector.
+Such as: $A * V = \delta * V$ where V is the eigenvector.
 
-## Sec. II. Theoretical Background
+Another way to factorize data is known as the Singular Value Decomposition and is given by:
+
+![image](https://user-images.githubusercontent.com/129328983/232873543-1fab45b1-e571-4af3-97d5-c56595448f93.png)
+
+A visual representation of this is:
+
+![image](https://user-images.githubusercontent.com/129328983/232873669-32779f1c-0be1-4e82-97a1-d0d0ba95b7e0.png)
+
 ## Sec. III. Algorithm Implementation and Development 
 ## Sec. IV. Computational Results
 ## Sec. V. Summary and Conclusions

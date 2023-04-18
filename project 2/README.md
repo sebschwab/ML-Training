@@ -29,19 +29,13 @@ A visual representation of this is:
 
 To begin, I created a correlational matrix of the first 100 photos and plotted using the pcolor attribute in matplot.
 
-'# Extract the first 100 images from the matrix X
+```
+# Extract the first 100 images from the matrix X
 X_100 = X[:, :100]
 
 # Compute the correlation matrix
 C = np.dot(X_100.T, X_100)
-
-# Plot the correlation matrix
-plt.pcolor(C)
-plt.colorbar()
-plt.title('Correlation Matrix of the First 100 Images')
-plt.xlabel('Image Index')
-plt.ylabel('Image Index')
-plt.show()'
+```
 
 ## Sec. IV. Computational Results
 ## Sec. V. Summary and Conclusions

@@ -6,7 +6,9 @@ Sebastian Schwab
 > This data set was created in the early days of AI, and was one of the first facial recognition algorithms created.
 
 ## Sec. I. Introduction and Overview
-Throughout this project I 
+Throughout this project I use a matrix to represent all of the photos together, this matrix X uses a compressed form of manipulation that turns every 2D image into a single column. Therefore, every column represents a single image. I also create correlational matrices, to perform this you must dot product one matrix to the transpose of itself. See below:
+$C = A*A^T$
+then this
 
 ## Sec. II. Theoretical Background
 ## Sec. III. Algorithm Implementation and Development 

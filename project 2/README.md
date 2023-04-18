@@ -24,5 +24,24 @@ A visual representation of this is:
 ![image](https://user-images.githubusercontent.com/129328983/232873669-32779f1c-0be1-4e82-97a1-d0d0ba95b7e0.png)
 
 ## Sec. III. Algorithm Implementation and Development 
+
+#### Part 1
+
+To begin, I created a correlational matrix of the first 100 photos and plotted using the pcolor attribute in matplot.
+
+'# Extract the first 100 images from the matrix X
+X_100 = X[:, :100]
+
+# Compute the correlation matrix
+C = np.dot(X_100.T, X_100)
+
+# Plot the correlation matrix
+plt.pcolor(C)
+plt.colorbar()
+plt.title('Correlation Matrix of the First 100 Images')
+plt.xlabel('Image Index')
+plt.ylabel('Image Index')
+plt.show()'
+
 ## Sec. IV. Computational Results
 ## Sec. V. Summary and Conclusions

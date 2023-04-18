@@ -94,6 +94,71 @@ U6 = sorted_eigenvectors[:, :6]
 ```
 
 #### Part V
+Next I SVD the matrix X and find the first six principle components. This was very straighforward in python thanks to numpy's comprehensive list of functions.
+```
+U_svd, S, Vt = np.linalg.svd(X, full_matrices=False)
+
+# Find the first six principal component directions
+PC = Vt[:6, :]
+```
+
+#### Part VI
+After collecting the SVD Principal Components and the fist 6 eigenvectors, I compare the first of each to one another using the norm of differnce of their absolute values:
+```
+# Compare the first eigenvector v1 with the first SVD mode u1
+u1 = U_svd[:, 0]
+v1 = U6[:, 0]
+diff_norm = np.linalg.norm(np.abs(v1) - np.abs(u1))
+```
+
+#### Part VII
+Finally, I wanted to compute the accuracy of the SVD modes by comparing their variances. So I captured the total variance of the entire matrix, and then compared that to the resulting variance from each of the six SVD modes:
+
+```
+# Compute the SVD
+U, S, Vt = np.linalg.svd(X)
+
+# Compute the total variance
+total_var = np.sum(X**2)
+
+# Compute the variance captured by each mode
+var_captured = (S**2) / total_var
+
+# Compute the percentage of variance captured by each mode
+percent_var_captured = var_captured * 100
+```
 
 ## Sec. IV. Computational Results
+
+#### Part I
+
+![image](https://user-images.githubusercontent.com/129328983/232882077-826fd3ef-6e1f-40a1-86bd-6be0a5a14e00.png)
+
+#### Part II
+
+![image](https://user-images.githubusercontent.com/129328983/232882144-bbc0695c-9a50-49ac-8cd3-94e13e222f3e.png)
+
+#### Part III
+
+![image](https://user-images.githubusercontent.com/129328983/232882225-203f96bb-accd-418c-ab61-7707a43b5ea0.png)
+
+#### Part IV
+
+![image](https://user-images.githubusercontent.com/129328983/232882288-9a4b4d9e-d237-48a6-b29d-7e304910212b.png)
+
+#### Part V
+
+![image](https://user-images.githubusercontent.com/129328983/232882370-882e695c-9bd6-480b-aff6-24fda0613375.png)
+
+#### Part VI
+
+![image](https://user-images.githubusercontent.com/129328983/232882520-6801ea66-49eb-425f-a1bc-d456ebef54b5.png)
+
+#### Part VII
+
+![image](https://user-images.githubusercontent.com/129328983/232882593-d7883f20-e246-4495-a2b8-d39b7bf487b7.png)
+
+![image](https://user-images.githubusercontent.com/129328983/232882662-cd6a8519-e9ef-425c-bb70-ecb5415aa5e7.png)
+
+
 ## Sec. V. Summary and Conclusions

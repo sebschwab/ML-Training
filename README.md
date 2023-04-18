@@ -2,7 +2,7 @@
 
 > This repository contains a code series using Python to train a deep neural net.
 
-[[project 1]]
+[project 1](https://github.com/sebschwab/ML-Training/tree/main/project%201)
 
 ## Part One
 

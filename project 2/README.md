@@ -39,7 +39,7 @@ X=results['X']
 X_100 = X[:, :100]
 
 # Compute the correlation matrix
-C = np.dot(X_100.T, X_100)
+C = np.corrcoef(X_100.T)
 ```
 
 #### Part II
@@ -70,7 +70,7 @@ for i in range(2):
         X_10 = X[:, values[k]-1:values[k]+9]
 
         # Compute the correlation matrix
-        C = np.dot(X_10.T, X_10)
+        C = np.corrcoef(X_10.T)
         
         value = i *j
         axs[i, j].pcolor(C)
@@ -135,7 +135,7 @@ percent_var_captured = var_captured * 100
 
 #### Part I
 
-![image](https://user-images.githubusercontent.com/129328983/232882077-826fd3ef-6e1f-40a1-86bd-6be0a5a14e00.png)
+![image](https://user-images.githubusercontent.com/129328983/232912369-403889b1-c431-47d2-8e2a-398a16b55951.png)
 
 #### Part II
 
@@ -143,7 +143,7 @@ percent_var_captured = var_captured * 100
 
 #### Part III
 
-![image](https://user-images.githubusercontent.com/129328983/232885220-5fefe522-1223-42ad-b4d1-b1241a06c696.png)
+![image](https://user-images.githubusercontent.com/129328983/232912412-0af31e9a-10bd-460f-9729-3dc13921c082.png)
 
 #### Part IV
 

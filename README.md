@@ -11,3 +11,5 @@
 
 - [project 2](https://github.com/sebschwab/ML-Training/tree/main/project%202)
 
+- [project 3](https://github.com/sebschwab/ML-Training/tree/main/project%203)
+

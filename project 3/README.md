@@ -1,4 +1,4 @@
-# Computing Correlation Using AI
+# Testing Machine Learning Algorithms
 
 Sebastian Schwab
 

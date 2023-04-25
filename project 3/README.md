@@ -239,6 +239,19 @@ Figure 9: The SVM classification for only two digits (worst case)
 
 Figure 10: The SVM classification for only two digits (best case)
 
+#### Part IV: Decision Tree
+
+![image](https://user-images.githubusercontent.com/129328983/234189013-98ab83fa-36a0-468c-baef-4ec1c99d1d91.png)
+
+Figure 10: The decision tree classification for all 10 digits
+
+![image](https://user-images.githubusercontent.com/129328983/234189236-311754e2-0291-49a8-ad4f-fced9b655efa.png)
+
+Figure 11: The decision tree classification for only two digits (worst case)
+
+![image](https://user-images.githubusercontent.com/129328983/234189385-d6e3746b-47c3-44e8-b81c-f66ae8abfcf5.png)
+
+Figure 12: The decision tree classification for only two digits (best case)
 
 ## Sec. V. Summary and Conclusions
 

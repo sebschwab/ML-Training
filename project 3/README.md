@@ -255,4 +255,29 @@ Figure 12: The decision tree classification for only two digits (best case)
 
 ## Sec. V. Summary and Conclusions
 
+#### Part I: SVD Analysis
+
+In figures 1-2 I can first see a sharp decrease in value across indexes of the singular value spectrum. This makes sense with my result for an optimized r-value because afte 100 the difference across indexes is hardly any at all.
+
+In figure 3 I can see that modes 1, 3, and 5 are not nearly as clear as the highest ones. There is a lot more muddy dots without clear distinction. Among the digits, I notice that digits seven and zero really overpower the others. This is most likely due to the specific V-Modes I have chosen.
+
+#### Part II-IV Comparison
+
+##### Best and worst cases
+
+I used the LDA model to find the two digits that had the best and worst classification of the digits. I did this simply by trial and error with intuition. I found that digits 1 and 0 were very different and created the best distinction. While 4 and 9 looked very similar and so were the hardest to tell apart. In groups of three I found 1, 0, and 3 to work best, and 4, 9, 7 to work worst.
+
+#### Run Time comparison
+
+I used the same model of results for all my algorithms so they would be very easy to compare. Before the data was even compared however, I first noticed the compuational difference between these learning algorithms. SVM took by far the longest, and is at risk of overcalculating the data with such a large set. Decision tree and LDA took similar times which leads me to believe they have similar compuational requirements. 
+
+#### Training vs Test
+
+Across all algorithms, no matter what, the training data performed better than the test data. This makes sense by the nature of supervised and unsupervised AI learning algorithms. Since they are trained on the training data, they will always perform better on that. 
+
+#### Result Comparison
+
+The LDA performed fairly similar to the Decision Tree, with values of accuracy 0.1% off from one another. However, the Decision Tree had a 100% success rate when comparing to its training data and the LDA did not. The Decision tree also had slightly higher percentage points when evaluating per digit.
+
+The best learning algorithm was the Support Vector Machine. It produced a stunning 99% accuracy on its worst case, and a 99.977% accuracy on its best. Also, when comparing all 10 digits the SVM had 12% higher accuracy than the decision tree. This accuracy came at a cost however. The run time on this algorithm was significantly higher.
 

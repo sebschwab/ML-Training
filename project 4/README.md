@@ -219,7 +219,9 @@ Figure 5: Digit representation of the first 20 PCA modes of the MNIST dataset
 Figure 6: Computational results and accuracy of the FFNN on the MNIST dataset
 
 #### Part IV
-~
+
+![image](https://user-images.githubusercontent.com/129328983/236964325-db12ccd1-d833-4f68-aa7f-96e5d6dfe187.png)
+
 Figure 7: Computational results and accuracy of the LSTM on the MNIST dataset
 
 #### Part V
@@ -236,7 +238,11 @@ Figure 9: Accuracy Score for the Decision Treeclassification
 
 ## Sec. V. Summary and Conclusions
 
+#### Part I
 
+From these results I can clearly detect a much higher accuracy in the Neural Nets than in any kind of polynomial fit...
+
+#### Part II-VI
 
 
 

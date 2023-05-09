@@ -240,9 +240,12 @@ Figure 9: Accuracy Score for the Decision Treeclassification
 
 #### Part I
 
-From these results I can clearly detect a much higher accuracy in the Neural Nets than in any kind of polynomial fit...
+When comparing the Neural Net accuracies between the two different test sets, it appears that the test set that included a discontinous set of values (first and last ten numbers) performed marginally better. While both models had a significantly low LSE, the split training set perfomed better on both testing and training evaluations. Although both models had a higher test error than training error, the test error on the split set was below half that of the first set. I believe this is because a split data set has a more varied series of values and so prepares the FFNN better.
+
+From these results I can clearly detect a much higher accuracy in the Neural Nets than in any kind of polynomial fit. Both Neural Nets had a < 0.01 error. While the polynomial fits ranged from an error of 6.0 - 200,000. It can definitely be reasoned that Neural Nets can fit data better, however this does come with a slightly higher computation cost.
 
 #### Part II-VI
 
+On all Neural Nets (no matter FFNN or LSTM) the first Epoch had the highest loss, and it continually decreased after each iteration. This can be seen in figure 6. Overall when comparing the FFNN and LSTM, both had similar accuracy. Although, the LSTM scored 1% higher than the FFNN. However, this came with an incredibly higher computation cost: the LSTM took over 10 minutes to compute on a laptop while the FFNN took about 2.
 
-
+The best performing classification model was the Support Vector Machine. This one took an average amount of time (2 minutes) yet performed the best with an accuracy > 98%. The model does not even use a Neural Net, which makes me think its application is better suited for other tasks. Second and third place were the FFNN and LSTM, with a very high accuracy of 93% and 94%. Yet, these took by far the longest to compute. Finally, the fastest yet also most inaccurate was the Decision Tree with an accuracy of 86%.

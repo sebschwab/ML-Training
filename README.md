@@ -7,11 +7,13 @@
 
 ## Table of Contents:
 
-- [project 1](https://github.com/sebschwab/ML-Training/tree/main/project%201)
+- [Project 1](https://github.com/sebschwab/ML-Training/tree/main/project%201)
 
-- [project 2](https://github.com/sebschwab/ML-Training/tree/main/project%202)
+- [Project 2](https://github.com/sebschwab/ML-Training/tree/main/project%202)
 
-- [project 3](https://github.com/sebschwab/ML-Training/tree/main/project%203)
+- [Project 3](https://github.com/sebschwab/ML-Training/tree/main/project%203)
 
-- [project 4](https://github.com/sebschwab/ML-Training/tree/main/project%204)
+- [Project 4](https://github.com/sebschwab/ML-Training/tree/main/project%204)
+
+- [Project 5](https://github.com/sebschwab/ML-Training/tree/main/project%205)
 

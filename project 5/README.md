@@ -253,6 +253,7 @@ Figure 8: ESN results with Rho = 28
 
 #### Part 1:
 
+When testing the basic NN with different values for Rho - I found that 28 caused a huge spike in chaos. The loss factor is raised by over a multiple of 10. Since this dataset seemed the most chaotic, I chose to use this over the rest of the Neural Nets. The FFNN also performed very well in general for this prediction time series.
 
 #### Part 2-4
 

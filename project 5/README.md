@@ -14,7 +14,7 @@ Neural Networks can do more than classification. In this project I attempt to de
 
 The Lorentz system is a system of differential equations that are commonly used in various fields of science, including physics, meteorology, and chaos theory. The system is noted for its chaotic solutions for certain parameters and initial conditions.
 
-Here's the system of equations:
+The system of equations is as follows:
 
 dx/dt = σ(y-x)
 

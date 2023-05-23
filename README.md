@@ -17,3 +17,5 @@
 
 - [Project 5](https://github.com/sebschwab/ML-Training/tree/main/project%205)
 
+- [Project 6](https://github.com/sebschwab/ML-Training/tree/main/project%206)
+

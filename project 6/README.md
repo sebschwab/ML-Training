@@ -158,12 +158,96 @@ for lags in lag_list:
 
 ```
 
-#### Part 3:
+#### Part 3: Adding Gaussian Noise
+
+In order to test how resilient my SHRED is to noise, I added some to the data with the array of standard deviations as shown below:
+
+```
+std_devs = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+```
+
+I then used this loop to test my code and retrain the model:
+
+```
+# Loop over the standard deviations
+for std_dev in std_devs:
+    # Add Gaussian noise to the data
+    noisy_X = transformed_X + np.random.normal(loc=0, scale=std_dev, size=transformed_X.shape)
+```
+
+#### Part 4: Testing the number of sensors
+
+In order to see how changing the number of sensors affects the performance of my model, I used the following array and loop:
+
+```
+# List of sensors to test
+sensor_list = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+# Initialize an empty list to store the results
+results = []
+
+# Loop over the sensor list
+for num_sensors in sensor_list:
+    # Randomly choose sensor locations
+    sensor_locations = np.random.choice(m, size=num_sensors, replace=False)
+
+    # Prepare data for current number of sensors
+    all_data_in = np.zeros((n - 52, 52, num_sensors))
+    for i in range(len(all_data_in)):
+        all_data_in[i] = transformed_X[i:i+52, sensor_locations]
+
+    # Prepare datasets
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+    train_data_in = torch.tensor(all_data_in[train_indices], dtype=torch.float32).to(device)
+    valid_data_in = torch.tensor(all_data_in[valid_indices], dtype=torch.float32).to(device)
+    test_data_in = torch.tensor(all_data_in[test_indices], dtype=torch.float32).to(device)
+
+    train_data_out = torch.tensor(transformed_X[train_indices + 52 - 1, sensor_locations], dtype=torch.float32).to(device)
+    valid_data_out = torch.tensor(transformed_X[valid_indices + 52 - 1, sensor_locations], dtype=torch.float32).to(device)
+    test_data_out = torch.tensor(transformed_X[test_indices + 52 - 1, sensor_locations], dtype=torch.float32).to(device)
+
+    train_dataset = TimeSeriesDataset(train_data_in, train_data_out)
+    valid_dataset = TimeSeriesDataset(valid_data_in, valid_data_out)
+    test_dataset = TimeSeriesDataset(test_data_in, test_data_out)
+
+    # Create and train the model
+    shred = models.SHRED(num_sensors, m, hidden_size=64, hidden_layers=2, l1=350, l2=400, dropout=0.1).to(device)
+    validation_errors = models.fit(shred, train_dataset, valid_dataset, batch_size=64, num_epochs=1000, lr=1e-3, verbose=True, patience=5)
+
+    # Calculate error
+    test_recons = sc.inverse_transform(shred(test_dataset.X).detach().cpu().numpy())
+    test_ground_truth = sc.inverse_transform(test_dataset.Y.detach().cpu().numpy())
+
+    error = np.linalg.norm(test_recons - test_ground_truth) / np.linalg.norm(test_ground_truth)
+    results.append(error)
+
+```
 
 ## Sec. IV. Computational Results
 
+![image](https://github.com/sebschwab/ML-Training/assets/129328983/9bdc3dfe-fe36-4ecf-8dc2-abf01e6ec340)
+![image](https://github.com/sebschwab/ML-Training/assets/129328983/a46f6444-e1c3-477d-b8ba-342c0def1f32)
 
+Figure 1: Training data results from base conditions
+
+![image](https://github.com/sebschwab/ML-Training/assets/129328983/1b5d9d09-8262-46fa-978b-67e9f509a69e)
+
+Figure 2: Error over epochs
+
+![image](https://github.com/sebschwab/ML-Training/assets/129328983/cd77a53d-dc21-4811-838e-355af007c50a)
+
+Figure 3: Variation of results from ground truth
 
 ## Sec. V. Summary and Conclusions
 
+From these results I am able to determine that this model became highly efficient at predicting temperatures after training. However, it took an incredible amount of time to run this Neural Network. On my personal laptop, it took over two hours. This is why I don't have the plotted results for parts 3-4. Although, on a higher powered GPU these results should run with much more ease. 
 
+It seems that the error starts off relatively high, but then sharply drops after a few epochs. Which makes this model excellent with only three sensors and a lag time of 52.
+
+Although I was unable to visually plot the results for varying lag time. I am able to predict that raising lag time would increase performance. But this would only be true up to a point, which is when over-fitting would start to occur.
+
+The noise has a drastic effect on the ability of the model. Too much noise makes in incredibly difficult to read the data, and therefore much less accurate in training. 
+
+In this neural network, only three sensors proved to be very accurate in predicting sea-surface temperatures. Two would be slightly too low, and although more sensors would certainly increase performance they would come with a higher computational cost.
